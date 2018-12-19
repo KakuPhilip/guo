@@ -22,42 +22,51 @@
         firebase.initializeApp(config);
     </script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
 </head>
 
 <body class="no-user">
 
     <div id="container">
         <div id="header">
-            <h1>Guo</h1>
-            <div id="auth">
-                <input type="text" id="username" placeholder="Username">
-                <input type="text" id="email" placeholder="Email">
-                <input type="password" id="password" placeholder="Password">
-                <button id="sign-up">Sign Up</button>
-                <button id="login">Log In</button>
-                <button id="google-login">Log In With Google</button>
-            </div>
-            <div id="user-info">
-                <span id="display-name"></span>
-                <button id="logout">Log Out</button>
-            </div>
-        </div>
+			<h1>Guoooooo</h1>
+			<button id="open-auth">Sign In</button>
+			<div id="auth">
+				<input type="text" id="user-sign-up" placeholder="Username">
+				<input type="text" id="email-sign-up" placeholder="Email">
+				<input type="password" id="password-sign-up" placeholder="Password">
+				<button id="sign-up">Sign Up</button>
+				<br>
+				<input type="text" id="email-log-in" placeholder="Email">
+				<input type="password" id="password-log-in" placeholder="Password">
+				<button id="login">Log In</button>
 
-        <!-- serch-->
+				<br>
+				<button id="google-login">Log In With Google</button>
+				<br>
+				<span class="close">&times;</span>
+			</div>
+			<div id="user-info">
+				<span id="display-name"></span>
+				<button id="logout">Log Out</button>
+			</div>
+		</div>
+
         <div id="main">
-            <div id="search">
-                <h1 id="search1">Search</h1>
-        
-                <input id="query" placeholder="Please type here">
-                <button id="submit">Click here to Search</button>
+            <div id="write-message">
+                <textarea id="message-body" placeholder="type message here"></textarea>
+                <br>
+                <button id="submit-message">Send to..</button>
             </div>
-            <div id="results"></div>
+            <div id="message"></div>
         </div>
-
         <div id="sidebar">
             <ul id="menu">
-                <li><a href="index.html">Home</a></li>
+                <li>
+                    <a href="messages.html">Messages</a>
+
+                </li>
+
                 <li><a href="profile.html">Profile</a></li>
                 <li>Friends</li>
                 <li>Top Users</li>
@@ -66,7 +75,7 @@
     </div>
 
     <script src="js/auth.js"></script>
-    <script src="js/search.js"></script>
+    <script src="js/direct-message.js"></script>
 </body>
 
 </html>
