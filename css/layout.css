@@ -1,3 +1,4 @@
+
 #container {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -18,11 +19,11 @@
 
 #sidebar {
 	grid-area:sidebar;
-
 }
 
 #main { 
 	grid-area: main;
+
 }
 
 #footer {

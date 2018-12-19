@@ -1,44 +1,85 @@
+
+
+/*
+	font-family: 'Charmonman', cursive;
+*/
+
+
+
+/*
+font-family: 'Dosis', sans-serif;
+*/
+
+#main {
+    font-size: 20px;
+    line-height: 2;
+    
+}
+
 .result {
-    border: 1px solid white;
+    border: 3px solid gray;
+    border-radius:30px;
     padding: 0.5em;
-    margin: 0.25em;
-}
-#search{
-border: 20px solid pink;
-  border-image-source: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/652/hearts-border-image.png);
-  border-image-slice: 20 22;
-  border-image-repeat: round;
+    margin: 1em;
+    background-color:lightcyan;
+    
 }
 
-.result-title {}
+#search1 {
+    border: 20px solid pink;
+    border-image-source: url(https://img.icons8.com/metro/50/000000/star.png);
+    border-image-slice: 125 5;
+    border-image-repeat: round;
+    width: 20%;
+    position: relative;
+    left: 37%;
+    margin-top: 3em;
+    margin-bottom: 2em;
+  
+    font-size: 1.5em;
+}
 
-#main{
+.result-title {
+font-size: 25px;
+font-weight: bold;
+
+}
+
+#main {
     text-align: center;
-     color: gray;
+    color: ;
 }
- by 
-.result-time {
-    color: blue;
+
+by .result-time {
+    color: pink;
 }
+
 .result-location {
-    color: green;
+ 
+    color: darkred;
 }
 
 .result-duration {
-    color: lightgreen;
+    color: grey;
+    font-size: 0.9em;
+  
 }
 
-
 #query {
-    font-size: 2em;
+    font-size: 1.2em;
     border: none;
     width: 100%;
     border-bottom: 2px solid black;
+    text-align: center;
+    background-color: pink;
+    color: darkslategrey;
+  
 }
+
 #submit {
-    font-size: 12pix;
+    font-size: 15px;
     border: 4em;
-   padding: 0.5em;
+    padding: 0.5em;
     margin: 0.25em;
     border: 2px solid black;
 }
