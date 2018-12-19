@@ -4,13 +4,14 @@ window.addEventListener('load', function () {
     const query = document.getElementById('query');
     const results = document.getElementById('results');
     submit.addEventListener('click', search);
-    addEventListener('keydown', function (event) {
+    query.addEventListener('keydown', function (event) {
         if (event.which == 13) {
             search();
         }
     });
 
     function search() {
+        results.innerHTML = '';
         const q = query.value;
         //        console.log(q);
         const promise = firebase.database()
@@ -20,39 +21,56 @@ window.addEventListener('load', function () {
 
         promise.once("value", function (events) {
             for (var key in events.val()) {
-                createResult(events.val()[key]);
+                console.log(key);
+                createResult(key, events.val()[key]);
             }
         });
 
-        function createResult(event) {
-            console.log(event);
+        function createResult(key, event) {
 
             const result = document.createElement('div');
             result.classList.add('result');
 
             const title = document.createElement('div');
+            const link = document.createElement('a');
             title.classList.add('result-title');
-            title.textContent = event.description;
+            link.href = `event.html?id=${key}`;
+            
+            /*
+                get id: 
+                location.search.split('=')[1]
+                firebase.database().ref('events').child(id);
+                
+                event.html duplicate
+                event.js
+                event.css
+            */
+            
+            
+            link.textContent = event.description;
+            title.appendChild(link);
 
             const time = document.createElement('div');
             time.classList.add('result-time');
             time.textContent = event.time;
-            
-             const location = document.createElement('div');
-           location.classList.add('result-location');
-           location.textContent = event.location;
-            
-             const duration = document.createElement('div');
-           duration.classList.add('result-duration');
-           duration.textContent = event.duration;
+
+            const location = document.createElement('div');
+            location.classList.add('result-location');
+            location.textContent = event.location;
+
+            const duration = document.createElement('div');
+            duration.classList.add('result-duration');
+            duration.textContent = event.duration;
 
 
-        
             result.appendChild(title);
-            result.appendChild(title);
+            result.appendChild(location);
             result.appendChild(time);
-            results.appendChild(location);
             result.appendChild(duration);
+            
+            // append new result to results
+            results.appendChild(result);
+            
         }
     }
 });
